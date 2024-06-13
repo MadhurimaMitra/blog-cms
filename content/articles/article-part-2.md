@@ -1,5 +1,5 @@
 ---
-title: Article part 2
+title: Eighth Article
 description: Article
 image: /img/Media.svg
 alt: another-img
