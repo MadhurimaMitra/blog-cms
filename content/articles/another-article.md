@@ -1,5 +1,5 @@
 ---
-title: Another Article
+title: Seventh Article
 description: This is another article
 image: /img/BlogImage.svg
 alt: another-image
