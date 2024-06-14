@@ -22,7 +22,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Alt Text', name: 'alt', widget: 'string' }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - { label: 'Slug (Must be same as title in the format 'example-title')', name: 'slug', widget: 'string' }
+      - { label: 'Slug (Must be same as title in the format "example-title")', name: 'slug', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'datetime' }
       - { label: 'Featured', name: 'featured', widget: 'boolean' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
