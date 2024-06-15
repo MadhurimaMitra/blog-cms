@@ -11,4 +11,11 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content'
   ],
+  app: {
+    head: {
+      script: [
+        {hid: 'FontAwesome', src: 'https://kit.fontawesome.com/f64425d366.js'}
+      ]
+    }
+  }
 })

@@ -15,10 +15,13 @@ export default {
         'light-grey': '#DBE2EF',
         'blue': '#3F72AF',
         'navy': '#112D4E'
-    },
-    fontFamily: {
+      },
+      screens: {
+        'sm': '360px'
+      },
+      fontFamily: {
         playfair: ['Playfair Display', 'serif']
-    }
+      },
     },
   },
   plugins: [],

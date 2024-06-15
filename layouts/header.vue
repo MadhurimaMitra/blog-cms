@@ -1,14 +1,34 @@
 
 import { NuxtLink } from '#build/components';
 <template>
-    <section class="flex justify-between items-center py-7 px-36 bg-white text-navy">
+    <section class="flex justify-between lg:py-7 sm:py-4 lg:px-36 sm:px-6 bg-white text-navy border-b border-slate-300">
         <img src="/img/Logo.svg" alt="logo">
-        <div class="flex gap-8">
-            <!-- <span>Home</span> -->
-            <!-- <span>Blog</span> -->
-            <NuxtLink to="/">Home</NuxtLink>
-            <NuxtLink to="/blog">Blog</NuxtLink>
-            <NuxtLink to="https://blog-website-8008135.netlify.app/admin">Login</NuxtLink>
+        <div>
+            <i @click="handleClick()" class="fa-solid fa-bars cursor-pointer"></i>
+            <div v-if="showMenu" class="absolute lg:right-36 sm:right-5 lg:top-16 sm:top-16 flex flex-col gap-6 py-6 px-4 bg-white border border-slate-300 rounded shadow-md">
+                <!-- <span>Home</span> -->
+                <!-- <span>Blog</span> -->
+                <NuxtLink to="/">Home</NuxtLink>
+                <hr class="w-36 bg-slate-400">
+                <NuxtLink to="/blog">Blog</NuxtLink>
+                <hr class="bg-slate-400">
+                <NuxtLink to="https://blog-website-8008135.netlify.app/admin">Login</NuxtLink>
+            </div>
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            showMenu: false
+        }
+    },
+    methods: {
+        handleClick() {
+            this.showMenu = !this.showMenu
+        }
+    }
+}
+</script>
