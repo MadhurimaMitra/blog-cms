@@ -8,7 +8,7 @@ import { NuxtLink } from '#build/components';
             <!-- <span>Blog</span> -->
             <NuxtLink to="/">Home</NuxtLink>
             <NuxtLink to="/blog">Blog</NuxtLink>
-            <NuxtLink to="https://blog-website-8008135.netlify.app/admin">Admin</NuxtLink>
+            <NuxtLink to="https://blog-website-8008135.netlify.app/admin">Login</NuxtLink>
         </div>
     </section>
 </template>
