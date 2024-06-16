@@ -1,5 +1,6 @@
 
 import { NuxtLink } from '#build/components';
+import { innerWidth } from "window";
 <template>
     <section class="flex justify-between lg:py-7 sm:py-4 lg:px-36 sm:px-6 bg-white text-navy border-b border-slate-300">
         <img src="/img/Logo.svg" alt="logo">
@@ -11,8 +12,8 @@ import { NuxtLink } from '#build/components';
                 <NuxtLink to="/">Home</NuxtLink>
                 <hr class="w-36 bg-slate-400">
                 <NuxtLink to="/blog">Blog</NuxtLink>
-                <hr class="bg-slate-400">
-                <NuxtLink to="https://blog-website-8008135.netlify.app/admin">Login</NuxtLink>
+                <hr v-if="isMobile" class="bg-slate-400">
+                <NuxtLink to="https://blog-website-8008135.netlify.app/admin" v-if="isMobile">Login</NuxtLink>
             </div>
         </div>
     </section>
@@ -22,13 +23,27 @@ import { NuxtLink } from '#build/components';
 export default {
     data() {
         return {
-            showMenu: false
+            showMenu: false,
+            isMobile: false,
         }
     },
     methods: {
         handleClick() {
             this.showMenu = !this.showMenu
+        },
+        async checkScreenSize() {
+            this.isMobile = window.innerWidth > 767;
+        },
+        handleOutsideClick(event) {
+            if (!this.$el.contains(event.target)) {
+                this.showMenu = false
+            }
         }
+    },
+    async mounted() {
+        this.checkScreenSize();
+        window.addEventListener('resize', this.checkScreenSize);
+        document.addEventListener('click', this.handleOutsideClick);
     }
 }
 </script>
